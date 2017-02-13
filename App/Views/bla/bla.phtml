@@ -1,0 +1,26 @@
+Route: / Controller: BlaController Action:bla View: bla
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script>
+    $.ajax({
+        type: "GET",
+        url: "http://api-php-site/api/robots/2",
+        data:{
+            format: 'json'
+        },
+        cache: false,
+        success: function(data){
+            $("#resultarea").text(data);
+        }
+    });
+</script>
+
+<html>
+<head>
+    <title>Consultando api</title>
+</head>
+<body>
+<div id="resultarea"></div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+Route: / Controller: IndexController Action:Index View: index
+<br/>
+<?php foreach($this->view->product  as $product): ?>
+    <p><?php echo $product["name"] ?></p>
+    <p><?php echo $product["desc"] ?></p>
+    <hr>
+<?php endforeach;?>

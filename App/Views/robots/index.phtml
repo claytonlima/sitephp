@@ -1,0 +1,15 @@
+Route: / Controller: RobotsController Action:Robosts View: robosts
+<script>
+    $.ajaxSetup({
+        contents: {
+            mycustomtype: /mycustomtype/
+        },
+        converters: {
+            "text mycustomtype": true,
+            "mycustomtype json": function( result ) {
+
+                return newresult;
+            }
+        }
+    });
+</script>
