@@ -6,7 +6,7 @@ use SON\DI\Container;
 
 class BlaController extends Action
 {
-    public function bla()
+    public function contact()
     {
         $this->render("bla",false);
     }

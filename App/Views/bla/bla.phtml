@@ -2,17 +2,33 @@ Route: / Controller: BlaController Action:bla View: bla
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script>
-    $.ajax({
-        type: "GET",
-        url: "http://api-php-site/api/robots/2",
-        data:{
-            format: 'json'
-        },
-        cache: false,
-        success: function(data){
-            $("#resultarea").text(data);
-        }
-    });
+jQuery.ajax({
+    url: '/OfertaFiltros/saveFilters',
+    type: 'POST',
+    contentType: "application/json; charset=utf-8",
+    data: JSON.stringify(data),
+    dataType: 'json',
+    success: function(response){
+        busyHide();
+       var html = '<ul>';
+       for(var i in response.errors){
+           html+= '<li>'+response.errors[i]+'</li>';
+       }
+       html += '</ul>';
+       jQuery('#save-selection-errors').html(html);
+       if(response.errors.length == 0){
+           clearOffersStore();
+           alert('Salvo com sucesso');
+       }else{
+           alert('Verifique as mensagens de erro');
+       }
+    },
+    error:function(){
+        busyHide();
+        alert('erro');
+    }
+});
+}
 </script>
 
 <html>

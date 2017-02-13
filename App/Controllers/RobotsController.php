@@ -6,7 +6,7 @@ use SON\DI\Container;
 
 class RobotsController extends Action
 {
-    public function index()
+    public function contact()
     {
         echo "Hello";
     }
