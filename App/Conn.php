@@ -6,6 +6,6 @@ class Conn
 {
     public static function getDb()
     {
-        return new \PDO("mysql:host=localhost;dbname=test_oo;","root","clayton");
+        return new \PDO("mysql:host=localhost;dbname=site;","root","123brasil123");
     }
 }
