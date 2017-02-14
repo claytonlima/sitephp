@@ -6,8 +6,8 @@ use SON\DI\Container;
 
 class RobotsController extends Action
 {
-    public function contact()
+    public function robots()
     {
-        echo "Hello";
+        $this->render("robots",false);
     }
 }

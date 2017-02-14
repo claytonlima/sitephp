@@ -1,0 +1,22 @@
+Route: / Controller: RobotsController Action:Robosts View: robosts
+Route: / Controller: BlaController Action:bla View: bla
+<script src="../../../webroot/js/jquery-3.1.1.min.js"></script>
+
+<script>
+    $.get( "http://api-php-site/api/robots/4", function( data ) {
+        console.log(data);
+        $( "body" )
+            .append( "Name: " + data.name ) // John
+            .append( "Time: " + data.time ); //  2pm
+    },
+</script>
+
+<html>
+<head>
+    <title>Consultando api</title>
+</head>
+<body>
+<div id="resultarea"></div>
+
+</body>
+</html>
