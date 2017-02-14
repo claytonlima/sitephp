@@ -8,6 +8,6 @@ class RobotsController extends Action
 {
     public function contact()
     {
-        echo "Hello";
+         $this->render("robots",false);
     }
 }
