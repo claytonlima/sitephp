@@ -37,7 +37,7 @@ abstract  class Boostrap
         if(!$found){
             preg_match('/^\/(\w+)\/?(\w+)?/', $url, $m);
             $ctr = $m[1];
-            $act = $m[2];
+            $act = $m[0];
             if(!$act){
                 $act = 'index';
             }
