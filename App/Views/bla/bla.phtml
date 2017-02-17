@@ -1,20 +1,24 @@
-Route: / Controller: BlaController Action:bla View: bla
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 
 <script>
-    $.ajax({
-        type: "GET",
-        url: 'http://api-php-site/api/robots/4',
-        success: function(data) {
-            $('info').html(data);
-        },
-        beforeSend: function(){
-            $('.loader').css({display:"block"});
-        },
-        complete: function(){
-            $('.loader').css({display:"none"});
-        }
-    });
+$.ajax({
+    type: "delete",
+    url: 'api/robots/1',
+    dataType:"json",
+    success: function (retorno) {
+    	var id 		= retorno.data.id;
+    	var name	= retorno.data.name;
+    	var info	=   '<p>'+id+'</p>'
+    				  + '<p>'+name+'</p>'
+    	$('#info').html(info);
+    },
+    error: function (retorno) {
+    	var errorRetorno = '<div>'
+        						'<p>'+retorno.data.responseText+'</p>'
+    					   '</div>';
+		  $('#info').html(errorRetorno);
+    }
+});
 </script>
 
 <html>
@@ -22,7 +26,10 @@ Route: / Controller: BlaController Action:bla View: bla
     <title>Consultando api</title>
 </head>
 <body>
-<div id="info"></div>
+
+<div id="info">
+
+</div>
 
 </body>
 </html>
