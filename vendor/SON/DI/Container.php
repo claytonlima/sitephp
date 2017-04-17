@@ -8,7 +8,7 @@ class Container
 {
     public static function getModel($model)
     {
-        $class = "\\App\\Models\\".ucfirst($model);
-        return new $class(Conn::getDb());
+    //    $class = "\\App\\Models\\".ucfirst($model);
+    //    return new $class(Conn::getDb());
     }
 }
