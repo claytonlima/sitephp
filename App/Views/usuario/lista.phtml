@@ -9,7 +9,7 @@
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 
 <script>
-    $.ajax({
+    jQuery.ajax({
         type: "GET",
         url: 'http://apiphp.local/api/users',
         success: function (data) {
@@ -46,7 +46,7 @@
     });
 
 function deleteUser(userId,name) {
-    $.ajax({
+    jQuery.ajax({
         type: "DELETE",
         url: "http://apiphp.local/api/users/"+userId,
         success: function (data) {
