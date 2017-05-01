@@ -45,17 +45,22 @@
         }
     });
 
-function deleteUser(userId,name) {
-    jQuery.ajax({
-        type: "DELETE",
-        url: "http://apiphp.local/api/users/"+userId,
-        success: function (data) {
-            location.reload();
-        },
-        error: function (data){
-            console.log(data);
-        }
-    });
+function deleteUser(userId) {
+    if(userId != null){
+     var result =   confirm("Você deseja pagar o usuario" +userId);
+         if(result == true){
+             jQuery.ajax({
+                 type: "DELETE",
+                 url: "http://apiphp.local/api/users/"+userId,
+                 success: function (data) {
+                     location.reload();
+                 },
+                 error: function (data){
+                     console.log(data);
+                 }
+             });
+         }
+     }
 }
 </script>
 
