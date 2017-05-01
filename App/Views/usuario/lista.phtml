@@ -47,7 +47,7 @@
 
 function deleteUser(userId) {
     if(userId != null){
-     var result =   confirm("Você deseja pagar o usuario" +userId);
+     var result =   confirm("Você deseja apagar o usuario "+userId);
          if(result == true){
              jQuery.ajax({
                  type: "DELETE",
